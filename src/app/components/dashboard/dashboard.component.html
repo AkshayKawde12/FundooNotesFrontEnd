@@ -1,0 +1,62 @@
+<div class="example-container" fxFlexAlign="center" style="background: white">
+        <mat-toolbar style="background: yellow ; z-index: 1;">
+                
+            <div class="sidenav" style="background: whitesmoke"> 
+                    <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+                    <!-- <button mat-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button> -->
+            </div>
+           
+
+            <div class="name_profile" >
+            <!-- <div fxFlex=5px > <img src="../../../assets/images/download.png"/></div> -->
+               <span><h2>Fundoo</h2></span>
+              </div>
+
+            <div class="searchicon" fxLayout="row" fxLayoutAlign="center center" style="background-color: red" style="margin-left: 10pc">   
+                    <mat-icon >searchbox</mat-icon>
+                    <input class="input-search" matInput placeholder="search"  >
+
+            </div>
+
+               <div class="icons" style="margin-left: 15pc" fxLayoutGap=40px >
+                          <mat-icon  >refresh</mat-icon>
+                            <mat-icon  >list_view</mat-icon>
+                            <mat-icon  >settings</mat-icon>
+                            <mat-icon  >view_module</mat-icon>
+               </div>
+              </mat-toolbar>
+
+
+
+
+
+              <mat-sidenav-container class="sidenav_open" >
+                    <mat-sidenav #sidenav mode="side"  >
+                       <div class="insidenav" fxLayout="column" fxLayoutAlign=" start" style="height: 300px" >
+                        <div style="background-color: bisque; width: 15pc ; height: 40pc;" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Notes()"> <mat-icon>notifications</mat-icon><span>Notes</span></div>
+                        <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Reminders()"><mat-icon>lightbulb_outline</mat-icon><span>Reminders</span></div>
+                        <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Edit_labels()"><mat-icon>create</mat-icon><span>Edit labels</span></div>
+                        <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Archive()"><mat-icon>archive</mat-icon><span>Archive</span></div>
+                        <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Trash()"><mat-icon>delete_outline</mat-icon><span>Trash</span></div>
+                        
+                      </div>
+
+                    </mat-sidenav>
+                  
+                    <mat-sidenav-content>
+
+
+                      <p><mat-checkbox [(ngModel)]="opened">
+                        
+                        
+                        sidenav.opened</mat-checkbox></p>
+                    </mat-sidenav-content>
+                    </mat-sidenav-container>
+
+
+
+</div>
+
+
+
+

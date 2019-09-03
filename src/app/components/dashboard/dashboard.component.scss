@@ -1,0 +1,123 @@
+// //keep
+// .keep{
+// margin-right:50pc;
+// }
+
+// //searchbox
+// .searchbox
+// {
+//     height: 60px;
+//     width:5pc;
+//     border: 0em
+//     margin-left 50px;
+//     background:" white";
+// }
+
+// .searchboxicon
+// {
+//     padding: 8px;
+//     margin: 3px;
+//     height: 24px;
+//     width: 24px;
+//     cursor: pointer;
+
+    
+// }
+// //toolbar
+// .example-icon {
+//     padding: 0 10px;
+//   }
+  
+//   .example-spacer {
+//     flex: 1 1 auto;
+//   }
+
+// // side nav
+
+//   .example-container {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   }
+  
+//   .example-events {
+//     width: 300px;
+//     height: 200px;
+//     overflow: auto;
+//     border: 1px solid #555;
+//   }
+
+.sidenav
+{
+    width: auto;
+}
+.name_profile
+{
+    margin-left: 20px;
+}
+// .searchicon
+// {
+//     letter-spacing: normal;
+//     word-spacing: normal;
+//     text-transform: none;
+//     text-indent: 0px;
+//     text-shadow: none;
+//     text-align: center;
+//     margin-left: 7pc;
+//     text-rendering: auto;
+//     font: 400 13.3333px Arial;
+//     height: 48px;
+//     vertical-align: 90pc;
+//     width: 40pc;
+//     white-space: nowrap;
+//     -webkit-box-align: center;
+// }
+.searchicon{
+
+    background-color: white;
+    height: 64%;
+    border-radius: 17px;
+    width: 34%;
+}
+.input-search{
+    width: 93%;
+    border: none;
+    height: 80%;
+}
+.icons
+{
+    padding: 8px;
+         margin: 3px;
+         height: 24px;
+         width: 70px;
+         cursor: pointer;
+}
+// .insidenav
+// {
+//     widows: 20vh;;
+//     height: 20vh;
+// }
+.sidenav_open
+{
+    height: 90vh;
+    
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-events {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #555;
+  }

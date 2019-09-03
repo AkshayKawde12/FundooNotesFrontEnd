@@ -1,0 +1,87 @@
+<div class="main" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="matCard">
+    <mat-card-title class="matCardTitle" fxLayoutAlign="center">
+      
+        <h2> <span style="color:skyblue;font-weight:bold">f</span>
+          <span style="color:orangered;font-weight:bold">u</span>
+          <span style="color:yellow;font-weight:bold">n</span>
+          <span style="color:skyblue;font-weight:bold">d</span>
+          <span style="color:green;font-weight:bold">o</span>
+          <span style="color:orangered;font-weight:bold">o</span>
+          </h2>
+      
+    </mat-card-title>
+
+    <!-- <mat-card-subtitle class="mat-card-subtitle" fxLayoutAlign="center">  
+      <h4 class="headertwo">Register Here</h4>
+    </mat-card-subtitle> -->
+     
+   
+
+    <div class="example-container">
+      <form [formGroup]="registerForm">
+        <div>
+          <p> First Name</p>
+          <mat-form-field appearance="outline" class="input-style">
+                    
+            <input type="text" matInput matInput placeholder="Enter first name" formControlName="firstName" [(ngModel)]="user.firstName"
+             
+            pattern="[a-zA-Z ]*" required>
+            <mat-error>This field is required.</mat-error>
+          </mat-form-field>
+         
+        </div>
+
+        <div>
+         <p>Last Name</p>
+          <mat-form-field appearance="outline" class="input-style">
+            
+            <input type="text" matInput  placeholder="Enter last name*" formControlName="lastName" [(ngModel)]="user.lastName"
+            pattern="[a-zA-Z ]*" required>
+            <mat-error>This field is required.</mat-error>
+           
+          </mat-form-field>
+        </div>
+        <div>
+            <p>Email</p>
+          <mat-form-field appearance="outline" class="input-style">
+            
+            <input type="email" matInput placeholder="Enter Email-Id*" formControlName="emailId" [(ngModel)]="user.emailId"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              <mat-error>This field is required.</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+            <p>Mobile</p>
+          <mat-form-field appearance="outline" class="input-style">
+            
+            <input type="text" matInput placeholder="Enter Phone Number*" formControlName="mobileNumber" [(ngModel)]="user.mobileNumber"
+              pattern="[0-9]{10}" required>
+              <mat-error>This field is required.</mat-error>
+               
+                        
+          </mat-form-field>
+        </div>
+        <div>
+            <p>Password</p>
+          <mat-form-field appearance="outline" class="input-style">
+           
+            <input type="password" matInput placeholder="Enter password*" [type]="!hide ? 'password' : 'text'"
+              formControlName="password" [(ngModel)]="user.password" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error>This field is required.</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+
+          
+        </div>
+        <div class="buttonRegister" fxLayoutAlign="center">
+         <button mat-raised-button color="primary"  id="register"  (click)="onRegister()" routerLink='/login' [disabled]="service.form.invalide">Register</button> 
+          <!-- <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button> --> 
+        </div>
+
+      </form>
+    </div>
+  </mat-card>
+</div>
