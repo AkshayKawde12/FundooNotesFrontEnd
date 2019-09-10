@@ -16,11 +16,18 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { NotesComponent } from './components/notes/notes.component';
+import { ShownotesComponent } from './components/shownotes/shownotes.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 
 
@@ -34,6 +41,11 @@ import {MatDividerModule} from '@angular/material/divider';
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
+    NotesComponent,
+    ShownotesComponent,
+    UpdateNotesComponent,
+    
+
 
 
 
@@ -42,10 +54,11 @@ import {MatDividerModule} from '@angular/material/divider';
     BrowserModule,
     AppRoutingModule, MatInputModule, DemoMaterialModule, FormsModule, ReactiveFormsModule
     , CommonModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule, MatCardModule,
-    FlexLayoutModule,MatToolbarModule,MatSidenavModule,MatDividerModule
+    FlexLayoutModule, MatToolbarModule, MatSidenavModule, MatDividerModule, ReactiveFormsModule, BrowserModule, ReactiveFormsModule, MatGridListModule,MatDialogModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[]
 })
 export class AppModule { }

@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="background-color:white" class="flexbackground">
+    <mat-card class="size" style="background-color:white" >
+        <mat-card-content fxLayout="column" fxLayoutAlign="space-evenly">
+            <div>
+                <input type="text" matInput placeholder="Title" class="inputadj" style="background-color: whitesmoke">
+            </div>
+            <div>
+
+                <input input type="text" matInput placeholder="discription" class="discriptionAdjust"
+                    style="background-color: whitesmoke">
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <span>
+                        <mat-icon>palette</mat-icon>
+                    </span>
+                    <span>
+                        <mat-icon>archive</mat-icon>
+                    </span>
+
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="onDelete(i)">Delete note</button>
+                    </mat-menu>
+                    </div>
+
+        </mat-card-content>
+    </mat-card>
+
+</div>

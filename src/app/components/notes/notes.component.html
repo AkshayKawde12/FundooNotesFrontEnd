@@ -1,0 +1,56 @@
+<!-- <div style="background-color: aqua">notes</div> -->
+
+<div fxLayout="column" fxLayoutAlign="start center" style="background-color:white" class="board">
+    <mat-card class="cardAdjustments" *ngIf="!hide" (click)="popOut()">
+        <mat-card-title>
+            <input input type="text" matInput placeholder="Title" class="adj">
+        </mat-card-title>
+    </mat-card>
+
+    <mat-card class="cardAdjustment" *ngIf="hide">
+        <form [formGroup]="createNote">
+            <mat-card-content fxLayout="column" fxLayoutAlign="space-evenly">
+                <div>
+                    <input input type="text" matInput formControlName="title" placeholder="Title" class="demo">
+                </div>
+                <div>
+                    <input input type="text" class="adju" formControlName="discription" matInput
+                        placeholder="take a note..">
+                </div>
+
+
+                <div class="cardIcon" fxLayout="row" fxLayoutAlign="space-evenly center">
+
+                    <span>
+                        <mat-icon>add_alert</mat-icon>
+                    </span>
+                    <span>
+                        <mat-icon>person_add</mat-icon>
+                    </span>
+                    <span>
+                        <mat-icon>palette</mat-icon>
+                    </span>
+                    <span>
+                        <mat-icon>photo</mat-icon>
+                    </span>
+                    <span>
+                        <mat-icon>archive</mat-icon>
+                    </span>
+
+                    <button mat-button colour="primary" (click)="onSubmit()">Close</button>
+                </div>
+
+            </mat-card-content>
+        </form>
+    </mat-card>
+
+    <!-- <div style="background-color: yellow" class="notes"> -->
+        <!-- <mat-grid-list cols="3" rowHeight="3:1">
+            <mat-grid-tile> -->
+                <app-shownotes></app-shownotes>
+            <!-- </mat-grid-tile>
+        </mat-grid-list> -->
+
+    <!-- </div> -->
+
+</div>

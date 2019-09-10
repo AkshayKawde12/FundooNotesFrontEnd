@@ -3,6 +3,7 @@ import { UserModel } from 'src/app/model/user-model';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { HttpserviceService } from 'src/app/service/httpservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ForgotpasswordComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  constructor(private snackBar: MatSnackBar, private httpservice: HttpserviceService, public formBuilder: FormBuilder) {}
+  constructor(private router:Router,private snackBar: MatSnackBar, private httpservice: HttpserviceService, public formBuilder: FormBuilder) {}
 
   ngOnInit() 
   {
@@ -34,10 +35,11 @@ export class ForgotpasswordComponent implements OnInit {
         if (response.statusCode === 200) {
           console.log(response);
           this.snackBar.open(
-            "set sucessfully",
-            "undo",
+            "please check your email",
+            "thank you",
             { duration: 2500 }
           )
+          this.router.navigateByUrl('login')
        
         } else {
           console.log(response);
@@ -46,6 +48,8 @@ export class ForgotpasswordComponent implements OnInit {
             "undo",
           { duration: 2500 }
         )
+        this.router.navigateByUrl('forgotpassword')
+        
       }
 
     } )

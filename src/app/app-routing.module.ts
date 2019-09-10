@@ -5,24 +5,37 @@ import { RegisterComponent } from './components/register/register.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { UpdateNotes } from './model/update-notes';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+
+
 
 
 const routes: Routes = [
   {
-   path:'login',component:LoginComponent 
+    path: 'login', component: LoginComponent
   },
-{
-  path : 'register',component:RegisterComponent
-},
-{
-  path:'forgotpassword',component:ForgotpasswordComponent
-},
-{
-  path: 'resetpassword',component:ResetpasswordComponent
-},
-{
-  path: 'dashboard',component:DashboardComponent
-}
+  {
+    path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'forgotpassword', component: ForgotpasswordComponent
+  },
+  {
+    path: 'resetpassword', component: ResetpasswordComponent
+  },
+  {
+    path: 'dashboard', component: DashboardComponent, children: [
+      {
+        path: 'notes', component: NotesComponent
+      }
+    ]
+  },
+  {
+    path: 'updateNotes',component:UpdateNotesComponent
+  }
+
 ];
 
 @NgModule({

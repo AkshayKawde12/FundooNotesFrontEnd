@@ -1,56 +1,62 @@
-
 <div class="login-board" fxLayout="column" fxLayoutAlign="center center">
-        <!-- <mat-card class="example_card"> -->
-          <mat-card-title class="matCardTitle" fxLayoutAlign="center center">
-           <h2> <span style="color:skyblue;font-weight:bold">f</span>
-            <span style="color:orangered;font-weight:bold">u</span>
-            <span style="color:yellow;font-weight:bold">n</span>
-            <span style="color:skyblue;font-weight:bold">d</span>
-            <span style="color:green;font-weight:bold">o</span>
-            <span style="color:orangered;font-weight:bold">o</span>
-            </h2> 
-          </mat-card-title>
-         
-      <div class="example-container">
-         <form >   
-          <div>
-           <p>Email</p>
-            <mat-form-field appearance="outline" class="input-style" > 
-              <input type="text" matInput placeholder="Email" [formControl]="emailId" [(ngModel)]="user.emailId"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>  
-                <mat-icon matSuffix>mail</mat-icon>
-                <mat-error>this field is required.</mat-error>
-            </mat-form-field>
-          </div>
-       
-          <div>
-              <p>Password</p>
-            <mat-form-field appearance="outline" class="input-style"> 
-              <input type="password" matInput placeholder="password" [type]="!hide ? 'password' : 'text'"
-                [formControl]="password" [(ngModel)]="user.password" required>
-              <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </mat-form-field>
-          </div>
+  <mat-card-title class="matCardTitle">
+    <h2>
+      <span style="color:skyblue;font-weight:bold">f</span>
+      <span style="color:orangered;font-weight:bold">u</span>
+      <span style="color:yellow;font-weight:bold">n</span>
+      <span style="color:skyblue;font-weight:bold">d</span>
+      <span style="color:green;font-weight:bold">o</span>
+      <span style="color:orangered;font-weight:bold">o</span>
+    </h2>
 
-          <button mat-raised-button color="primary" id="login" (click)='login()' > submit </button>
-          <div fxLayout="column" fxLayoutAlign="space-around start">
-            <div id="register" routerLink='/register'>Sign In...!</div>
-            <div id="forgetpassword" routerLink='/forgotpassword'>forget password...!</div>
-            <div>
-              
-          <span>
-            
-          </span>
-           </div><!-- <button mat-raised-button color="primary" id="register" routerLink='/register'>Register</button> -->
-            
-            
-          </div>
-  
-         </form> 
-      </div>
-    <!-- </mat-card> -->
+  </mat-card-title>
+  <div>
+    <mat-card-subtitle class="matCardSubTitle" fxLayoutAlign="center center">
+      <h2>sign In</h2>
+    </mat-card-subtitle>
   </div>
-      
+
+  <div class="example_container">
+    <form>
+      <div fxLayou="row" fxLayoutAlign="center" fxLayout.xs="row">
+        <mat-form-field appearance="outline" class="input-style" fxFlex>
+          <mat-label>Email</mat-label>
+          <input type="text" matInput placeholder="Email" [formControl]="emailId" [(ngModel)]="user.emailId"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          <mat-icon matSuffix>mail</mat-icon>
+          <mat-error>please enter valid Email-id.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+
+        <mat-form-field appearance="outline" class="input-style" fxFlex>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="password" [type]="!hide ? 'password' : 'text'"
+            [formControl]="password" [(ngModel)]="user.password" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="primary" id="login" (click)='login()'> submit </button>
+      <div fxLayout="column" fxLayoutAlign="space-around start">
+        <div id="register" routerLink='/register'>Sign up...!</div>
+        <div id="forgetpassword" routerLink='/forgotpassword'>forget password...!</div>
+        <div>
+
+          <span>
+
+          </span>
+        </div><!-- <button mat-raised-button color="primary" id="register" routerLink='/register'>Register</button> -->
+
+
+      </div>
+
+    </form>
+  </div>
+  <!-- </mat-card> -->
+</div>
+
 
 
 

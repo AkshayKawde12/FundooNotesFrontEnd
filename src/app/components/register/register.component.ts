@@ -3,33 +3,48 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserModel } from 'src/app/model/user-model';
 import { HttpserviceService } from 'src/app/service/httpservice.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
   user: UserModel = new UserModel();
   registerForm: FormGroup;
-  constructor(private snackBar: MatSnackBar, private httpservice: HttpserviceService, public formBuilder: FormBuilder) { }
+  constructor(private snackBar: MatSnackBar,private router:Router,
+              private httpservice: HttpserviceService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
-      {
-        'firstName': new FormControl(this.user.firstName, [Validators.required]) ,
-        'lastName': new FormControl(this.user.lastName, [Validators.required]),
-        'emailId': new FormControl(this.user.emailId, [Validators.email]),
-        'password': new FormControl(this.user.password, [Validators.required, Validators.minLength(6)]),
-        'mobileNumber': new FormControl(this.user.mobileNumber, [Validators.required,Validators.minLength(8)])
+     {
+        
+        'firstName': new FormControl('', [Validators.required]) ,
+        'lastName': new FormControl('', [Validators.required]),
+        'emailId': new FormControl('', [Validators.email,Validators.required]),
+        'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
+        'mobileNumber': new FormControl('', [Validators.required,Validators.minLength(8)])
       }
     )
-
   }
 
+  submitted=false;
+
+  get f()
+  {
+    return this.registerForm.controls;
+  }
+
+
   onRegister() {
-   console.log("Registration",this.registerForm.value);
+      this.submitted==true;
+      if(this.registerForm.invalid)
+      {
+        return;
+      }
+    console.log("Registration",this.registerForm.value);
      this.httpservice.postRequest('register', this.user).subscribe(
        (response: any) => {
          if (response.statusCode === 200) {
@@ -39,6 +54,7 @@ export class RegisterComponent implements OnInit {
              "undo",
              { duration: 2500 }
            )
+           this.router.navigateByUrl('login');
          } else {
            console.log(response);
            this.snackBar.open(
@@ -46,9 +62,12 @@ export class RegisterComponent implements OnInit {
              "undo",
            { duration: 2500 }
          )
+         this.router.navigateByUrl('register');
        }
 
      }
    )
    }
+
+   
 }

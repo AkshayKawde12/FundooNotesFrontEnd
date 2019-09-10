@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PasswordModelComponent } from './password-model.component';
+import { ShownotesComponent } from './shownotes.component';
 
-describe('PasswordModelComponent', () => {
-  let component: PasswordModelComponent;
-  let fixture: ComponentFixture<PasswordModelComponent>;
+describe('ShownotesComponent', () => {
+  let component: ShownotesComponent;
+  let fixture: ComponentFixture<ShownotesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PasswordModelComponent ]
+      declarations: [ ShownotesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PasswordModelComponent);
+    fixture = TestBed.createComponent(ShownotesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,38 +1,57 @@
-.matCard{
-  
-    width:35%;
-    height: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: auto;
-    margin-top: 3%;
-    border-radius: 02%;
-    box-shadow: 0 8px 16px 0 rgba(189, 83, 83, 0.459); 
-    align-content: center 
-  }
-.input-style{
-    width: 100%;
-    
+.matCard {
+  width: 440px;
+  height: 670px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  margin-top: 3%;
+  border-radius: 02%;
+  box-shadow: 0 8px 16px 0 rgba(189, 83, 83, 0.459);
+  align-content: center;
 }
-#register{
-    margin-left: 80%;
+.input-style {
+  width: 100%;
+}
+#register {
+  margin-left: 80%;
 }
 
 .mat-input-element {
-    font: inherit;
-    background: 0 0;
-    color: currentColor;
-    border: none;
-    outline: 0;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    vertical-align: bottom;
-    text-align: inherit;
-    height: 30px;
+  font: inherit;
+  background: 0 0;
+  color: currentColor;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+  text-align: inherit;
+  height: 30px;
 }
-.matCardTitle
+.matCardTitle {
+  font-size: xx-large;
+  height: 150px;
+}
+
+.matCardSubTitle
 {
-    font-size: xx-large;
+    height: 50px;
+}
+
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 133.33333%;
 }

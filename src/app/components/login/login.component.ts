@@ -33,26 +33,33 @@ export class LoginComponent implements OnInit {
     }
     
     console.log("EmailId"+data.emailId );
-    console.log("password:"+data.password);
+    console.log("password"+data.password);
     
+
     this.userService.login(data).subscribe( (response:any)=>{
       console.log(response);  
       if (response.statusCode == 200) {
-                console.log(response);
+                console.log("--->",response);
+                localStorage.setItem('firstName', response.firstName);
+                localStorage.setItem('lastName', response.lastName);
+                localStorage.setItem('email', response.emailId);
+                localStorage.setItem('token', response.token)
                 this.snackBar.open(
                   "login sucessfully",
                   "undo",
                   { duration: 2500 }
                 )
+
                 this.router.navigate(['dashboard'])
               
               } else {
                 console.log(response);
                 this.snackBar.open(
-                  "Failed",
-                  "undo",
+                  "Failed,please input valid information",
+                  "close",
                 { duration: 2500 }
               )
+              this.router.navigate(['login'])
             }
           }
     );
