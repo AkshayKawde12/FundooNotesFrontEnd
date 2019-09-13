@@ -1,21 +1,19 @@
-<!-- <div style="background-color: aqua">notes</div> -->
-
-<div fxLayout="column" fxLayoutAlign="start center" style="background-color:white" class="board">
+<div fxLayout="column" fxLayoutAlign="start center" class="board">
     <mat-card class="cardAdjustments" *ngIf="!hide" (click)="popOut()">
         <mat-card-title>
             <input input type="text" matInput placeholder="Title" class="adj">
         </mat-card-title>
     </mat-card>
 
-    <mat-card class="cardAdjustment" *ngIf="hide">
+    <mat-card class="cardAdjustment" *ngIf="hide" [ngStyle]="{'background':paint}">
         <form [formGroup]="createNote">
             <mat-card-content fxLayout="column" fxLayoutAlign="space-evenly">
                 <div>
-                    <input input type="text" matInput formControlName="title" placeholder="Title" class="demo">
+                    <input input type="text" matInput formControlName="title" placeholder="Title" class="demo" [ngStyle]="{'background':paint}">
                 </div>
                 <div>
                     <input input type="text" class="adju" formControlName="discription" matInput
-                        placeholder="take a note..">
+                        placeholder="take a note.." [ngStyle]="{'background':paint}">
                 </div>
 
 
@@ -27,9 +25,18 @@
                     <span>
                         <mat-icon>person_add</mat-icon>
                     </span>
-                    <span>
-                        <mat-icon>palette</mat-icon>
-                    </span>
+
+                    <div>
+                        <mat-icon button mat-button [matMenuTriggerFor]="palette">palette</mat-icon>
+                    </div>
+                    <mat-menu #palette="matMenu" yPosition="below"  >
+                        <div class="colors"fxLayout="row wrap">
+                            <div (click)="color(i)" *ngFor="let i of colorCodes" class="circle" [ngStyle]="{'background':i}">
+                            </div>
+                        </div>
+                    </mat-menu>
+
+
                     <span>
                         <mat-icon>photo</mat-icon>
                     </span>
@@ -44,13 +51,6 @@
         </form>
     </mat-card>
 
-    <!-- <div style="background-color: yellow" class="notes"> -->
-        <!-- <mat-grid-list cols="3" rowHeight="3:1">
-            <mat-grid-tile> -->
-                <app-shownotes></app-shownotes>
-            <!-- </mat-grid-tile>
-        </mat-grid-list> -->
-
-    <!-- </div> -->
+    <app-shownotes></app-shownotes>
 
 </div>

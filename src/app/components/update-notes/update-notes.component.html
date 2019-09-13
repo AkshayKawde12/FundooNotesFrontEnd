@@ -1,31 +1,31 @@
-<div fxLayout="row" fxLayoutAlign="start center" style="background-color:white" class="flexbackground">
-    <mat-card class="size" style="background-color:white" >
-        <mat-card-content fxLayout="column" fxLayoutAlign="space-evenly">
+<mat-card class="size">
+    <form>
+        <mat-card-content class="matCardAdjustment" fxLayout="column" fxLayoutAlign="space-evenly">
             <div>
-                <input type="text" matInput placeholder="Title" class="inputadj" style="background-color: whitesmoke">
+                <input type="text" [formControl]="title" matInput value="{{data.title}}" class="inputadj">
             </div>
             <div>
-
-                <input input type="text" matInput placeholder="discription" class="discriptionAdjust"
-                    style="background-color: whitesmoke">
+                <input input type="text" [formControl]="discription" matInput value="{{data.discription}}" class="discriptionAdjust">
             </div>
             <div fxLayout="row" fxLayoutAlign="space-around center">
-                    <span>
-                        <mat-icon>palette</mat-icon>
-                    </span>
-                    <span>
-                        <mat-icon>archive</mat-icon>
-                    </span>
-
-                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                        <mat-icon>more_vert</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item (click)="onDelete(i)">Delete note</button>
-                    </mat-menu>
-                    </div>
-
+                <span>
+                    <mat-icon>palette</mat-icon>
+                </span>
+                <span>
+                    <mat-icon>archive</mat-icon>
+                </span>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="onDelete(i)">Delete note</button>
+                </mat-menu>
+                <span>
+                    <button mat-button colour="primary" (click)="onSubmit(data)">Close</button>
+                </span>
+            </div>
         </mat-card-content>
-    </mat-card>
+    </form>
+</mat-card>
 
-</div>
+<!-- </div> -->

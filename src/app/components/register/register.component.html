@@ -67,7 +67,7 @@
             <mat-form-field appearance="outline" class="input-style" fxFlex>
               <mat-label>Mobile</mat-label>
               <input type="text" matInput placeholder="Enter Phone Number*" #Mobile formControlName="mobileNumber"
-                [(ngModel)]="user.mobileNumber" pattern="[789][0-9]{9},{10}" maxlength="10" required>
+                [(ngModel)]="user.mobileNumber" maxlength="10" required>
 
               <mat-error *ngIf="submitted && f.mobileNumber.errors">
                 <mat-error *ngIf="f.mobileNumber.errors.required">mobileNumber is required</mat-error>
@@ -90,14 +90,25 @@
             </mat-form-field>
           </div>
 
-          <div class="buttonRegister" fxLayout="row" fxLayoutAlign="space-around center">
-            
+
+          <div fxLayout="row" >
+              <button mat-raised-button colour="primary"  id="login" routerLink='/login'>Login</button>
+              <button mat-raised-button color="primary" id="register" (click)="onRegister()"
+              [disabled]="loading">Register</button>
+          </div>
+
+
+          <!-- <div fxLayout="column" fxLayoutAlign="center">
+
             <button mat-raised-button color="primary" id="register" (click)="onRegister()"
               [disabled]="loading">Register</button>
+              <button mat-raised-button colour="primary"  id="login" routerLink='/login'>Login</button> -->
+            <!-- <button mat-raised-button color="primary" id="login" (click)="login()">Login</button> -->
+            <!-- <a mat-raised-link routerLink='/register'>Sign up...!</a> -->
             <!-- <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button>  -->
-          </div>
+          <!-- </div> -->
         </div>
-        
+
       </form>
     </div>
   </mat-card>

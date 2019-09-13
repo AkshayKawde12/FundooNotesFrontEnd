@@ -14,14 +14,12 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./shownotes.component.scss']
 })
 export class ShownotesComponent implements OnInit {
-  user: NoteId = new NoteId();
-  NoteId: FormGroup;
   httpservice: any;
 
   constructor(
     private noteService: NoteServiceService,
     private formBuilder: FormBuilder,
-    private dialog : MatDialog
+    private dialog: MatDialog
   ) { }
 
   allNotes: any = []
@@ -30,7 +28,7 @@ export class ShownotesComponent implements OnInit {
     var data = {
       path: "getAllNotes",
       token: localStorage.getItem('token')
-    }
+    } 
     this.noteService.getRequest(data).subscribe(
       (Response: any) => {
         console.log("get all Label api hitted");
@@ -42,12 +40,11 @@ export class ShownotesComponent implements OnInit {
   }
 
   onDelete(i) {
-   
+
     console.log("note Id is--->", i);
-    const path = "delete?noteId="+ i.noteId
+    const path = "delete?noteId=" + i.noteId
     console.log("NoteId", i.noteId);
-    console.log("http://localhost:8080/notes/delete?noteId=48")
-    this.noteService.putRequest(path).subscribe(
+    this.noteService.putRequestDelete(path).subscribe(
       (response: any) => {
         console.log("note deleted --->", response);
         console.log(response.statusMessage);
@@ -57,19 +54,18 @@ export class ShownotesComponent implements OnInit {
       }
     );
   }
-  popUp(i):void
-  {
+  popUp(i): void {
     const dialogRef = this.dialog.open(UpdateNotesComponent, {
-      width:'550px',
-      height:'220px',
-      panelClass:'mayapp-no-padding-dialog',
+      width: '570px',
+      height: '170px',
+      panelClass: 'mayapp-no-padding-dialog',
       data: i
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
-  }
+}
 
 
 

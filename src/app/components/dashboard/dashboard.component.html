@@ -16,11 +16,31 @@
       </span>
     </div>
 
-    <div class="searchicon" fxLayout="row" fxLayoutAlign="center center" style="background-color: red"
-      style="margin-left: 10pc">
-      <mat-icon>searchbox</mat-icon>
-      <input class="input-search" matInput placeholder="search">
+    <!-- <div class="flex">
+      <form>
+        <div class="searchs" fxLayout="row" fxLayoutAlign="end center">
+          <button mat-icon-button matTooltip="search" matTooltipClass="matTooltip">
+            <mat-icon>search</mat-icon>
+          </button>
 
+            <input class="search" aria-label="search" autocomplete="off" placeholder="Search" , type="text" fxFlex> 
+          <button mat-icon-button type="reset" matTooltip="clear search">
+            <mat-icon>close</mat-icon>
+          </button>  
+        </div>
+      </form>
+    </div> -->
+    <div class="searchicon" fxLayout="row" fxLayoutAlign="end center" style="background-color: red"
+      style="margin-left: 10pc">
+      <button mat-icon-button matTooltip="search" matTooltipClass="matTooltip">
+        <mat-icon>search</mat-icon>
+      </button>
+
+      <input class="input_search" matInput placeholder="search">
+
+      <button mat-icon-button type="reset" matTooltip="clear search">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
 
     <div class="icons" style="margin-left: 15pc" fxLayoutGap=40px>
@@ -47,7 +67,7 @@
           <mat-icon>lightbulb_outline</mat-icon><span>Reminders</span>
         </div>
         <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row"
-          fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="Edit_labels()">
+          fxLayoutAlign="space-evenly center" fxLayoutGap="0px" (click)="popUp(i)">
           <mat-icon>create</mat-icon><span>Edit labels</span>
         </div>
         <div style="background-color: white; width: 15pc ; height: 40pc;" fxLayout="row"
@@ -72,6 +92,6 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
- 
+
 
 </div>

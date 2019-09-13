@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { LabelComponent } from '../label/label.component';
+
 
 
 @Component({
@@ -8,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) 
+  {}
+
 
   ngOnInit() {
   }
@@ -21,10 +28,17 @@ export class DashboardComponent implements OnInit {
   {
     alert("pop up Reminder");
   }
-  Edit_labels()
-  {
-    alert("create labels");
-  }
+  popUp(i): void {
+      const dialogRef = this.dialog.open(LabelComponent, {
+        width: '300px',
+        height: '230px',
+        panelClass: 'mayapp-no-padding-dialog',
+        data: i
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    }
   Archive()
   {
     alert("Archive");

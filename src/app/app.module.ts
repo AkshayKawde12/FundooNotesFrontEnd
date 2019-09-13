@@ -25,13 +25,9 @@ import { NotesComponent } from './components/notes/notes.component';
 import { ShownotesComponent } from './components/shownotes/shownotes.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
-import {MatDialogModule} from '@angular/material/dialog';
-
-
-
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { LabelComponent } from './components/label/label.component';
 
 @NgModule({
   declarations: [
@@ -44,21 +40,17 @@ import {MatDialogModule} from '@angular/material/dialog';
     NotesComponent,
     ShownotesComponent,
     UpdateNotesComponent,
-    
-
-
-
-
+    LabelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, MatInputModule, DemoMaterialModule, FormsModule, ReactiveFormsModule
     , CommonModule, BrowserAnimationsModule, HttpClientModule, MatButtonModule, MatCardModule,
-    FlexLayoutModule, MatToolbarModule, MatSidenavModule, MatDividerModule, ReactiveFormsModule, BrowserModule, ReactiveFormsModule, MatGridListModule,MatDialogModule
+    FlexLayoutModule, MatToolbarModule, MatSidenavModule, MatDividerModule, ReactiveFormsModule, BrowserModule, ReactiveFormsModule, MatGridListModule, MatDialogModule, MatTooltipModule
 
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[]
+  entryComponents: []
 })
 export class AppModule { }

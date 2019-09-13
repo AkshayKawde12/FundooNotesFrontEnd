@@ -1,0 +1,44 @@
+<div fxLayoutAlign="space-around center">
+    <form [formGroup]="createLabel">
+        <mat-card class="card" fxLayout="column" fxLayoutAlign="start start" style="background-color: beige">
+            <div>
+                <span class='header'>Edit labels</span>
+            </div>
+            
+            <div>
+                <span class="add" fxLayout="row" fxLayoutAlign="start none">
+                    <button mat-icon-button matTooltip="add" matTooltipClass="matTooltip">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                    <mat-form-field>
+                        <input matInput placeholder="create new label" class="create" formControlName="labelName">
+                    </mat-form-field>
+                    <button mat-icon-button (click)="create()" matTooltip="clear search">
+                        <mat-icon>done</mat-icon>
+                    </button>
+                </span>
+            </div>
+
+            <div>
+                <span class="Delete" fxLayout="row" fxLayoutAlign="start none">
+                    <button mat-icon-button matTooltip="Delete" matTooltipClass="matTooltip">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <mat-form-field>
+                        <input matInput placeholder="create" class="searchbox">
+                    </mat-form-field>
+                    <button mat-icon-button type="done" matTooltip="clear search">
+                        <mat-icon>done</mat-icon>
+                    </button>
+                </span>
+
+
+                <mat-divider></mat-divider>
+
+                <div fxLayout="column" fxLayoutAlign=" end center">
+                    <button mat-raised-button color="primary" id="create"> Done </button>
+                </div>
+            </div>
+        </mat-card>
+    </form>
+</div>

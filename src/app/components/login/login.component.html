@@ -38,7 +38,13 @@
         </mat-form-field>
       </div>
 
-      <button mat-raised-button color="primary" id="login" (click)='login()'> submit </button>
+      <div fxLayout="column" class="link">
+        
+        <a mat-raised-link routerLink='/register'>Sign up...!</a>
+        <a mat-raised-link routerLink='/forgotpassword'>forget password...!</a>
+        <button mat-raised-button class="buttonAdiustment" color="primary" id="login" (click)='login()'> submit </button>
+
+        <!-- <button mat-raised-button color="primary" id="login" (click)='login()'> submit </button>
       <div fxLayout="column" fxLayoutAlign="space-around start">
         <div id="register" routerLink='/register'>Sign up...!</div>
         <div id="forgetpassword" routerLink='/forgotpassword'>forget password...!</div>

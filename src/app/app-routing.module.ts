@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { UpdateNotes } from './model/update-notes';
 import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+import { LabelComponent } from './components/label/label.component';
 
 
 
@@ -34,6 +35,9 @@ const routes: Routes = [
   },
   {
     path: 'updateNotes',component:UpdateNotesComponent
+  },
+  {
+    path:'label',component:LabelComponent
   }
 
 ];
